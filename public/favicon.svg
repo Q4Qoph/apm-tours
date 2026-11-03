@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="A&amp;PM Tours favicon">
+  <defs>
+    <linearGradient id="green" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#13573F"/>
+      <stop offset="1" stop-color="#083A2A"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#DBAA4B"/>
+      <stop offset="1" stop-color="#F0C56D"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="102" fill="url(#green)"/>
+  <!-- Heavy monogram geometry ensures readability at small browser-tab sizes. -->
+  <path fill="#FFFFFF" fill-rule="evenodd" d="M99 397 L215 113 Q221 97 240 97 H270 Q288 97 296 113 L413 397 H337 L308 319 H204 L174 397 Z M256 175 L224 264 H288 Z"/>
+  <!-- A single broad gold journey line echoes the original logo's crossing road. -->
+  <path d="M97 352 C171 308 256 284 336 280 C363 278 392 280 418 287" stroke="#083A2A" stroke-width="46" stroke-linecap="round" fill="none"/>
+  <path d="M97 352 C171 308 256 284 336 280 C363 278 392 280 418 287" stroke="url(#gold)" stroke-width="29" stroke-linecap="round" fill="none"/>
+</svg>

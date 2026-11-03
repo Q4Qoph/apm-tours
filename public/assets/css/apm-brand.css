@@ -1,0 +1,168 @@
+:root {
+    --apm-forest-green: #0B5A3C;
+    --apm-deep-green: #123C2D;
+    --apm-gold: #C8942D;
+    --apm-sunset-amber: #F69F28;
+    --apm-warm-surface: #F8F5EC;
+    --apm-text: #26342B;
+
+    --theme-color: var(--apm-forest-green);
+    --primary-color: var(--apm-forest-green);
+    --title-color: var(--apm-deep-green);
+    --body-color: var(--apm-text);
+    --smoke-color: var(--apm-warm-surface);
+    --smoke-color2: #F3F1EB;
+    --yellow-color: var(--apm-gold);
+    --th-border-color: #E4E8E2;
+    --bs-primary: var(--apm-forest-green);
+    --bs-primary-rgb: 11, 90, 60;
+    --bs-link-color: var(--apm-forest-green);
+    --bs-link-hover-color: var(--apm-deep-green);
+}
+
+.btn-primary {
+    color: #FFFFFF;
+    background-color: var(--apm-forest-green);
+    border-color: var(--apm-forest-green);
+}
+
+.btn-check:focus + .btn-primary,
+.btn-primary:focus,
+.btn-primary:hover {
+    color: #FFFFFF;
+    background-color: var(--apm-deep-green);
+    border-color: var(--apm-deep-green);
+}
+
+.btn-check:focus + .btn-primary,
+.btn-primary:focus,
+.btn-check:active + .btn-primary,
+.btn-check:checked + .btn-primary,
+.btn-primary.active:focus,
+.btn-primary:active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.25rem rgb(11 90 60 / 25%);
+}
+
+.btn-check:active + .btn-primary,
+.btn-check:checked + .btn-primary,
+.btn-primary.active,
+.btn-primary:active,
+.show > .btn-primary.dropdown-toggle {
+    color: #FFFFFF;
+    background-color: var(--apm-deep-green);
+    border-color: var(--apm-deep-green);
+}
+
+.btn-primary:disabled,
+.btn-primary.disabled {
+    color: #FFFFFF;
+    background-color: var(--apm-forest-green);
+    border-color: var(--apm-forest-green);
+}
+
+.text-primary {
+    color: var(--apm-forest-green) !important;
+}
+
+.bg-primary {
+    background-color: var(--apm-forest-green) !important;
+}
+
+.link-primary {
+    color: var(--apm-forest-green);
+}
+
+.link-primary:hover,
+.link-primary:focus {
+    color: var(--apm-deep-green);
+}
+
+.apm-destination-summary {
+    margin: 12px 0 20px;
+    color: var(--body-color);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+#loader .animation-preloader.apm-map-pin-loader {
+    position: relative;
+    width: 72px;
+    height: 72px;
+    margin: auto;
+}
+
+#loader .apm-map-pin-loader::before,
+#loader .apm-map-pin-loader::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+#loader .apm-map-pin-loader::before {
+    top: calc(50% - 22px);
+    left: calc(50% - 22px);
+    width: 44px;
+    height: 44px;
+    border-bottom-right-radius: 0;
+    box-shadow: 0 0 0 3px var(--apm-forest-green);
+    background: radial-gradient(transparent 0, transparent 7px, var(--apm-forest-green) 7px);
+    transform: rotate(45deg);
+    animation-name: apm-map-pin;
+}
+
+#loader .apm-map-pin-loader::after {
+    top: 100%;
+    left: calc(50% - 3px);
+    width: 6px;
+    height: 3px;
+    opacity: 0.8;
+    background: var(--apm-forest-green);
+    animation-name: apm-map-pin-shadow;
+}
+
+@keyframes apm-map-pin {
+    50% {
+        transform: rotate(45deg) translate(-50%, -50%);
+    }
+}
+
+@keyframes apm-map-pin-shadow {
+    50% {
+        opacity: 0.2;
+        transform: scaleX(3);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #loader .apm-map-pin-loader::before,
+    #loader .apm-map-pin-loader::after {
+        animation: none;
+    }
+}
+
+/* A&PM Core Values: preserve Tourm's feature-card layout with brand colors and value icons. */
+#values-sec .feature-item {
+    background-color: var(--apm-warm-surface);
+}
+
+#values-sec .feature-item_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--apm-forest-green);
+    background-color: rgb(11 90 60 / 10%);
+    line-height: 1;
+}
+
+#values-sec .apm-core-value-icon {
+    font-size: 2.5rem;
+}
+
+#values-sec .feature-item:hover .feature-item_icon {
+    color: var(--apm-forest-green);
+}
+
