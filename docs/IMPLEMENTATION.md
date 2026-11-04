@@ -153,6 +153,8 @@ After the public site and quotation workflow are approved and verified, provide 
 
 ## Current Development State
 
+Stakeholder feedback received on 2026-11-04 is mapped to files, acceptance criteria, and unresolved visual decisions in [STAKEHOLDER-REVIEW-PLAN.md](STAKEHOLDER-REVIEW-PLAN.md). The owner approved the plan on 2026-11-04. Shared footer/header, Contact, legal corrections, and slide-out panel changes are implemented; Blade compilation, the existing two tests, and nine route/render checks passed. Browser visual/interaction checks and final stakeholder acceptance remain pending.
+
 ### Verified checks
 
 - [x] Laravel 13.39.0 scaffold, Composer lock, starter migrations, and default test structure audited.
@@ -188,3 +190,21 @@ These checks do not mean the A&PM homepage or About page is approved for product
 ### Deferred
 
 Live booking, inventory/availability, ticketing, payment processing, and broader travel-management functionality remain deferred until separately approved and designed.
+
+### Footer visual revision — 2026-11-04
+
+The owner superseded the white-footer treatment with a green footer and a white background around only the logo. Light text/icons and the white animated plane provide contrast. Approved contact/social content is retained. The change is implemented in scoped brand CSS; browser visual acceptance remains pending.
+
+### Shared header consistency — 2026-11-04
+
+All routed pages now use the same A&PM header and footer through `layouts/app.blade.php`. Removed the route-dependent `header-layout1` branch, including its demo top bar and sign-in controls. FAQ, Terms, Privacy, and Cookies inherit the same header used by Home, About, and Contact. Page bodies are unchanged. Blade compilation, existing tests, and rendered header/footer consistency checks pass; browser visual review remains pending.
+
+### Source-document proofreading — 2026-11-04
+
+FAQ now presents all 69 supplied questions using the existing accordion, grouped into 11 topics; the unrelated property FAQ/demo form is removed. FAQ flight-service answers and About retain the profile’s planned qualification, and FAQ social handles follow the approved correction. Shared metadata now identifies A&PM. All source policy paragraphs match the rendered documents after approved date/email substitutions. Blade compilation, the two existing tests, source-parity and request checks passed; browser/owner review and deployment remain pending. See [CONTENT-SOURCE-AUDIT.md](CONTENT-SOURCE-AUDIT.md) for remaining demo pages and document precedence.
+
+FAQ visual adjustment: removed the opening breadcrumb/banner and promoted the retained introduction heading to H1. Question content and approved revisions are unchanged. Blade compilation and FAQ render/content checks passed.
+
+### Blog/Gallery content and navigation — 2026-11-04
+
+Implemented shared Blog and Gallery header links and removed their former footer links. Blog now presents three profile-based travel-guidance articles with clean individual routes and a reusable article wrapper. The legacy detail URL redirects to the planning guide. Gallery presents nine existing illustrative photographs with captions and Tourm lightbox controls. Demo posts, author/date claims and fake pagination are removed from these pages. Blade compilation, existing tests and five-page HTTP/link/image checks pass; browser and owner acceptance and deployment remain pending.

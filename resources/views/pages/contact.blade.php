@@ -11,59 +11,12 @@
             <p>A&amp;PM Tours &amp; Travel Ltd plans and coordinates travel in Kenya, East Africa and beyond. Contact our team to discuss the trip you have in mind.</p>
         </div>
 
-        <div class="row gy-4 justify-content-center">
-            <div class="col-xl-4 col-lg-6">
-                <div class="about-contact-grid style2">
-                    <div class="about-contact-icon">
-                        <img src="{{ asset('assets/img/icon/location-dot2.svg') }}" alt="">
-                    </div>
-                    <div class="about-contact-details">
-                        <h2 class="box-title">Postal Address</h2>
-                        <p class="about-contact-details-text">P.O. Box 9820 - 00200</p>
-                        <p class="about-contact-details-text">Nairobi, Kenya</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xl-4 col-lg-6">
-                <div class="about-contact-grid">
-                    <div class="about-contact-icon">
-                        <img src="{{ asset('assets/img/icon/call.svg') }}" alt="">
-                    </div>
-                    <div class="about-contact-details">
-                        <h2 class="box-title">Telephone &amp; WhatsApp</h2>
-                        <p class="about-contact-details-text"><a href="tel:+254788799517">+254 788 799 517</a></p>
-                        <p class="about-contact-details-text"><a href="https://wa.me/254788799517">Message us on WhatsApp</a></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xl-4 col-lg-6">
-                <div class="about-contact-grid">
-                    <div class="about-contact-icon">
-                        <img src="{{ asset('assets/img/icon/mail.svg') }}" alt="">
-                    </div>
-                    <div class="about-contact-details">
-                        <h2 class="box-title">Email &amp; Website</h2>
-                        <p class="about-contact-details-text"><a href="mailto:reservations@apmtours.com">reservations@apmtours.com</a></p>
-                        <p class="about-contact-details-text"><a href="https://apmtours.com">apmtours.com</a></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xl-4 col-lg-6">
-                <div class="about-contact-grid">
-                    <div class="about-contact-icon">
-                        <img src="{{ asset('assets/img/icon/user.svg') }}" alt="">
-                    </div>
-                    <div class="about-contact-details">
-                        <h2 class="box-title">Social Media</h2>
-                        <p class="about-contact-details-text">Instagram &amp; X: @APMTours</p>
-                        <p class="about-contact-details-text">Facebook &amp; LinkedIn: APMTours</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="row gy-4 justify-content-center apm-contact-cards">
+<div class="col-xl-3 col-md-6"><div class="about-contact-grid"><div class="about-contact-icon"><i class="fas fa-phone" aria-hidden="true"></i></div><div class="about-contact-details"><h2 class="box-title">Telephone &amp; WhatsApp</h2><p class="about-contact-details-text"><a href="tel:+254788799517">+254 788 799 517</a></p><p class="about-contact-details-text"><a href="https://wa.me/254788799517">Message on WhatsApp</a></p></div></div></div>
+<div class="col-xl-3 col-md-6"><div class="about-contact-grid"><div class="about-contact-icon"><i class="fas fa-envelope" aria-hidden="true"></i></div><div class="about-contact-details"><h2 class="box-title">Email</h2><p class="about-contact-details-text"><a href="mailto:reservations@apmtours.com">reservations@apmtours.com</a></p></div></div></div>
+<div class="col-xl-3 col-md-6"><div class="about-contact-grid"><div class="about-contact-icon"><i class="fas fa-globe" aria-hidden="true"></i></div><div class="about-contact-details"><h2 class="box-title">Website</h2><p class="about-contact-details-text"><a href="https://apmtours.com">apmtours.com</a></p></div></div></div>
+<div class="col-xl-3 col-md-6"><div class="about-contact-grid"><div class="about-contact-icon"><i class="fas fa-users" aria-hidden="true"></i></div><div class="about-contact-details"><h2 class="box-title">Follow us on</h2>@include('partials.social-profiles')</div></div></div>
+</div>
     </div>
 </section>
 

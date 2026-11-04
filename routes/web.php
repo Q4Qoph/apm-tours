@@ -18,7 +18,10 @@ Route::view('/tour-details', 'pages.tour-details')->name('tours.details');
 Route::view('/faq', 'pages.faq')->name('faq');
 Route::view('/contact', 'pages.contact')->name('contact');
 Route::view('/blog', 'pages.blog')->name('blog');
-Route::view('/blog-details', 'pages.blog-details')->name('blog.details');
+Route::view('/blog/planning-your-trip', 'pages.blog-details')->name('blog.planning');
+Route::view('/blog/safari-and-coast', 'pages.blog.safari-coast')->name('blog.safari-coast');
+Route::view('/blog/responsible-travel', 'pages.blog.responsible-travel')->name('blog.responsible-travel');
+Route::redirect('/blog-details', '/blog/planning-your-trip', 301)->name('blog.details');
 Route::view('/gallery', 'pages.gallery')->name('gallery');
 
 Route::view('/terms-and-conditions', 'pages.legal.terms')->name('terms');

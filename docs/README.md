@@ -4,6 +4,8 @@ This directory contains the A&PM Tours & Travel implementation roadmap and techn
 
 ## Start here
 
+- [Source-document content audit](CONTENT-SOURCE-AUDIT.md) — comparison findings, FAQ corrections, approved exceptions, and remaining demo-content gaps.
+- [Stakeholder feedback action plan](STAKEHOLDER-REVIEW-PLAN.md) — proposed response to the 2026-11-04 forwarded feedback; awaiting approval before coding.
 - [Implementation roadmap](IMPLEMENTATION.md) — authoritative phases, task status, verification, blockers, and next work.
 - [Implementation plan](IMPLEMENTATION-PLAN.md) — owner-directed page-copy scope, page map, reusable components, and remaining decisions.
 - [Landing page plan](LANDING-PAGE-PLAN.md) — Company Profile content mapped to Tourm components and current routes; implemented sections and deferred items are identified.

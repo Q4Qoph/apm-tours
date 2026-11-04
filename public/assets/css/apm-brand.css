@@ -166,3 +166,237 @@
     color: var(--apm-forest-green);
 }
 
+/* Approved stakeholder review: shared contact surfaces and legal typography. */
+.apm-site-footer {
+    background: var(--apm-deep-green);
+    --body-color: #fff;
+    --white-color: #fff;
+}
+
+.apm-site-footer .widget-area {
+    background: var(--apm-deep-green);
+}
+
+.apm-site-footer .about-logo > a {
+    display: inline-block;
+    max-width: 100%;
+    padding: 16px 20px;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.apm-site-footer .about-logo img {
+    display: block;
+}
+
+.apm-site-footer .widget_title,
+.apm-site-footer .about-text,
+.apm-site-footer .info-box_text,
+.apm-site-footer .info-box_text p,
+.apm-site-footer .info-box_link,
+.apm-site-footer .menu a,
+.apm-site-footer .apm-social-profiles,
+.apm-site-footer .apm-editorial-links a {
+    color: #fff;
+}
+
+.apm-site-footer .info-box_text .icon {
+    color: #fff;
+    background: rgb(255 255 255 / 15%);
+}
+
+.apm-site-footer .apm-social-profiles i,
+.apm-site-footer .apm-x-icon {
+    color: #fff;
+}
+
+.apm-site-footer a:hover {
+    color: #F8D492;
+}
+
+.apm-site-footer .about-logo > a:focus-visible {
+    outline-offset: 5px;
+}
+
+.apm-site-footer .copyright-wrap {
+    background: var(--apm-deep-green);
+}
+
+.apm-site-footer .copyright-text,
+.apm-site-footer .copyright-text a {
+    color: #fff;
+}
+
+.apm-site-footer .apm-footer-plane {
+    width: 79px;
+    height: 34px;
+    background: #fff;
+    -webkit-mask: url('../img/shape/shape_8.png') center / contain no-repeat;
+    mask: url('../img/shape/shape_8.png') center / contain no-repeat;
+}
+
+.apm-footer-plane img {
+    visibility: hidden;
+}
+
+.apm-social-profiles {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 20px;
+    color: var(--apm-deep-green);
+}
+
+.apm-social-profiles li {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.apm-social-profiles i,
+.apm-x-icon {
+    flex: 0 0 18px;
+    text-align: center;
+    color: var(--apm-forest-green);
+}
+
+.apm-contact-details .details,
+.apm-social-profiles span,
+.apm-contact-cards .about-contact-details {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.apm-contact-details .icon {
+    flex-shrink: 0;
+}
+
+.apm-contact-cards .about-contact-grid {
+    height: 100%;
+}
+
+.apm-contact-cards .about-contact-icon {
+    color: #fff;
+    font-size: 24px;
+}
+
+.apm-contact-cards .box-title {
+    font-size: 20px;
+}
+
+.apm-contact-cards .apm-social-profiles {
+    font-size: 14px;
+}
+
+.th-header .main-menu > ul > li > a,
+.th-mobile-menu ul li a,
+.th-header .apm-panel-toggle {
+    color: var(--apm-forest-green);
+}
+
+.th-header .header-button .th-btn {
+    background: var(--apm-forest-green);
+    border: 1px solid var(--apm-forest-green);
+    color: #fff;
+}
+
+.th-header .header-button .th-btn::before {
+    background: #fff;
+}
+
+.th-header .header-button .th-btn:hover,
+.th-header .header-button .th-btn:focus-visible {
+    background: #fff;
+    color: var(--apm-forest-green);
+    border-color: var(--apm-forest-green);
+}
+
+.th-header .apm-panel-toggle {
+    border: 0;
+    background: transparent;
+    font-size: 26px;
+}
+
+.apm-site-footer a:focus-visible,
+.th-header a:focus-visible,
+.th-header button:focus-visible,
+.sidemenu-wrapper a:focus-visible,
+.sidemenu-wrapper button:focus-visible {
+    outline: 2px solid var(--apm-forest-green);
+    outline-offset: 4px;
+}
+
+.apm-legal-page h1 {
+    font-size: 32px;
+}
+
+.apm-legal-page .legal-document h2 {
+    font-size: 22px;
+}
+
+.apm-legal-page .legal-document h3 {
+    font-size: 18px;
+}
+
+.apm-legal-page p,
+.apm-legal-page li,
+.apm-legal-page td {
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 767px) {
+    .apm-legal-page h1 { font-size: 28px; }
+    .apm-legal-page .legal-document h2 { font-size: 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .apm-footer-plane { animation: none !important; }
+}
+
+.apm-site-footer.footer-layout2 .footer-widget.widget_nav_menu a:not(:hover) {
+    color: #fff;
+}
+
+.th-header .header-button .th-btn.th-icon::after {
+    background-color: currentColor;
+}
+
+.th-mobile-menu a:focus-visible {
+    outline: 2px solid var(--apm-forest-green);
+    outline-offset: 4px;
+}
+
+.apm-site-footer a:focus-visible {
+    outline-color: #fff;
+}
+
+/* Preserve Tourm cards while fitting the selected illustrative photographs. */
+.apm-gallery .gallery-img img,
+.apm-editorial-image img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.apm-editorial-page figure img {
+    width: 100%;
+    height: auto;
+}
+
+.apm-editorial-page figcaption {
+    font-size: 14px;
+    color: var(--apm-text);
+}
+
+.apm-gallery .gallery-box.style5 .gallery-img {
+    height: auto;
+    aspect-ratio: 4 / 3;
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .header-layout8 .header-logo img { max-width: 180px !important; }
+    .header-layout8 .main-menu > ul > li { margin: 0 8px; }
+    .header-layout8 .main-menu > ul > li > a { font-size: 14px; }
+    .header-layout8 .header-button .th-btn { padding: 12px 16px; font-size: 14px; }
+}

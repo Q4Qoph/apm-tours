@@ -3,10 +3,10 @@
 Cookies Policy | A&amp;PM Tours &amp; Travel
 @endsection
 @section('content')
-<x-legal-document title="Cookies Policy" effective-date="01 November 2026">
+<x-legal-document title="Cookies Policy" effective-date="01 October 2026">
 <p>A&amp;PM Tours Ltd Brand: A&amp;PM Tours &amp; Travel Ltd</p>
                     <p>Connecting You to Every Journey.</p>
-                    <div class="table-responsive my-4"><table class="table table-bordered align-middle"><tbody><tr><td><p>Effective date: 1 November 2026 Website: https://apmtours.com Contact: reservations@apmtours.com | +254 788 799 517</p></td></tr></tbody></table></div>
+                    <div class="table-responsive my-4"><table class="table table-bordered align-middle"><tbody><tr><td><p>Effective date: 01 October 2026 Website: https://apmtours.com Contact: info@apmtours.com | +254 788 799 517</p></td></tr></tbody></table></div>
                     <p>This Cookies Policy explains how A&amp;PM Tours Ltd uses cookies and similar technologies on its website and digital services, how those technologies may affect visitors, and the choices available to users.</p>
                     <h2>1. Introduction</h2>
                     <p>A&amp;PM Tours Ltd, branded as A&amp;PM Tours &amp; Travel Ltd ("A&amp;PM", "we", "us" or "our"), uses cookies and similar technologies on https://apmtours.com and, where applicable, related online booking, enquiry, analytics and customer-support services. This policy should be read together with our Privacy Policy and applicable booking terms.</p>
@@ -57,7 +57,7 @@ Cookies Policy | A&amp;PM Tours &amp; Travel
                     <h2>18. Changes to this Cookies Policy</h2>
                     <p>A&amp;PM may update this policy from time to time to reflect changes in website technology, services, legal requirements, regulatory guidance or business practices. The latest version will be published on our website with the effective or last-updated date. Material changes may also be communicated through the website or cookie preference interface where appropriate.</p>
                     <h2>19. Contact us</h2>
-                    <div class="table-responsive my-4"><table class="table table-bordered align-middle"><tbody><tr><td><p>Company</p></td><td><p>A&amp;PM Tours Ltd (Brand: A&amp;PM Tours &amp; Travel Ltd)</p></td></tr><tr><td><p>Postal address</p></td><td><p>P.O. Box 9820 - 00200, Nairobi</p></td></tr><tr><td><p>Telephone / WhatsApp</p></td><td><p>+254 788 799 517</p></td></tr><tr><td><p>Email</p></td><td><p>reservations@apmtours.com</p></td></tr><tr><td><p>Website</p></td><td><p>https://apmtours.com</p></td></tr><tr><td><p>Subject line</p></td><td><p>Cookies / Privacy Enquiry</p></td></tr></tbody></table></div>
+                    <div class="table-responsive my-4"><table class="table table-bordered align-middle"><tbody><tr><td><p>Company</p></td><td><p>A&amp;PM Tours Ltd (Brand: A&amp;PM Tours &amp; Travel Ltd)</p></td></tr><tr><td><p>Postal address</p></td><td><p>P.O. Box 9820 - 00200, Nairobi</p></td></tr><tr><td><p>Telephone / WhatsApp</p></td><td><p>+254 788 799 517</p></td></tr><tr><td><p>Email</p></td><td><p>info@apmtours.com</p></td></tr><tr><td><p>Website</p></td><td><p>https://apmtours.com</p></td></tr><tr><td><p>Subject line</p></td><td><p>Cookies / Privacy Enquiry</p></td></tr></tbody></table></div>
                     <p>Connecting You to Every Journey.</p>
 </x-legal-document>
 @endsection

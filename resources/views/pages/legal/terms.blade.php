@@ -3,11 +3,11 @@
 Terms &amp; Conditions | A&amp;PM Tours &amp; Travel
 @endsection
 @section('content')
-<x-legal-document title="Terms & Conditions" effective-date="01 November 2026">
+<x-legal-document title="Terms & Conditions" effective-date="01 October 2026">
 <p>Website, Booking &amp; Travel Services</p>
-                    <div class="table-responsive my-4"><table class="table table-bordered align-middle"><tbody><tr><td><p>Legal entity</p></td><td><p>A&amp;PM Tours Ltd</p></td></tr><tr><td><p>Brand</p></td><td><p>A&amp;PM Tours &amp; Travel Ltd</p></td></tr><tr><td><p>Effective date</p></td><td><p>01 November 2026</p></td></tr><tr><td><p>Version</p></td><td><p>1.0</p></td></tr></tbody></table></div>
+                    <div class="table-responsive my-4"><table class="table table-bordered align-middle"><tbody><tr><td><p>Legal entity</p></td><td><p>A&amp;PM Tours Ltd</p></td></tr><tr><td><p>Brand</p></td><td><p>A&amp;PM Tours &amp; Travel Ltd</p></td></tr><tr><td><p>Effective date</p></td><td><p>01 October 2026</p></td></tr><tr><td><p>Version</p></td><td><p>1.0</p></td></tr></tbody></table></div>
                     <p>Connecting You to Every Journey</p>
-                    <p>P.O. Box 9820 - 00200, Nairobi | +254 788 799 517 | reservations@apmtours.com | https://apmtours.com</p>
+                    <p>P.O. Box 9820 - 00200, Nairobi | +254 788 799 517 | info@apmtours.com | https://apmtours.com</p>
                     <h2>1. About These Terms</h2>
                     <p>1.1 These Terms &amp; Conditions (the “Terms”) apply to the use of our website, enquiries, quotations, reservations and travel services arranged or supplied by A&amp;PM Tours Ltd, branded as A&amp;PM Tours &amp; Travel Ltd (“A&amp;PM”, “we”, “us”, “our”).</p>
                     <p>1.2 By requesting a booking, accepting a quotation, paying a deposit or other amount, signing a booking form, or otherwise instructing us to proceed, the person making the booking confirms that they have read and accepted these Terms for themselves and, where applicable, on behalf of all travellers named in the booking.</p>
@@ -159,7 +159,7 @@ Terms &amp; Conditions | A&amp;PM Tours &amp; Travel
                     <h2>28. Complaints and Customer Support</h2>
                     <p>28.1 A Traveller should raise any service concern as soon as reasonably possible during the trip so that A&amp;PM and the Supplier have an opportunity to investigate and, where possible, correct the issue.</p>
                     <p>28.2 A complaint should include the booking reference, affected service, relevant dates, supporting documents or photographs where appropriate, and the resolution sought.</p>
-                    <p>28.3 Complaints may be submitted to reservations@apmtours.com or through the official contact channels listed in these Terms.</p>
+                    <p>28.3 Complaints may be submitted to info@apmtours.com or through the official contact channels listed in these Terms.</p>
                     <p>28.4 A&amp;PM will acknowledge and investigate complaints in good faith and will coordinate with relevant Suppliers where necessary. Statutory rights and complaint avenues remain available to the Client where applicable.</p>
                     <h2>29. Governing Law and Dispute Resolution</h2>
                     <p>29.1 These Terms and any contract with A&amp;PM are governed by the laws of Kenya, unless mandatory law requires otherwise.</p>
@@ -177,10 +177,10 @@ Terms &amp; Conditions | A&amp;PM Tours &amp; Travel
                     <p>A&amp;PM Tours Ltd, branded as A&amp;PM Tours &amp; Travel Ltd</p>
                     <ul><li>Postal address: P.O. Box 9820 - 00200, Nairobi, Kenya</li></ul>
                     <ul><li>Telephone / WhatsApp: +254 788 799 517</li></ul>
-                    <ul><li>Email: reservations@apmtours.com</li></ul>
+                    <ul><li>Email: info@apmtours.com</li></ul>
                     <ul><li>Website: https://apmtours.com</li></ul>
                     <p>For booking changes, cancellations or complaints, please use the official email or telephone/WhatsApp contact details above and include your booking reference where available.</p>
                     <p>Connecting You to Every Journey</p>
-                    <p>A&amp;PM Tours &amp; Travel Ltd  |  reservations@apmtours.com  |  +254 788 799 517  |  apmtours.com</p>
+                    <p>A&amp;PM Tours &amp; Travel Ltd  |  info@apmtours.com  |  +254 788 799 517  |  apmtours.com</p>
 </x-legal-document>
 @endsection

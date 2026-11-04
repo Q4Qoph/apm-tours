@@ -1,6 +1,6 @@
 @props(['title', 'effectiveDate'])
 
-<section class="space">
+<section class="space apm-legal-page">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-10">
