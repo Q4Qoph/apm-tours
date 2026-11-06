@@ -41,6 +41,30 @@
                 <div class="gallery-img global-img"><img src="{{ asset('assets/img/apm-selected/service-transport.webp') }}" alt="Four-wheel-drive vehicle on a rural road" width="900" height="790" loading="lazy" decoding="async"><a href="{{ asset('assets/img/apm-selected/service-transport.webp') }}" class="icon-btn popup-image" aria-label="Enlarge image: Coordinated travel"><i class="fal fa-magnifying-glass-plus" aria-hidden="true"></i></a></div>
                 <figcaption class="mt-3"><h2 class="h5">Coordinated travel</h2></figcaption>
             </figure></div>
+            <div class="col-lg-4 col-md-6"><figure class="gallery-box style5 mb-0">
+                <div class="gallery-img global-img"><img src="{{ asset('assets/img/apm-selected/stakeholder-gallery-landscape.webp') }}" alt="Giraffe and safari vans in a wide grassland landscape" width="1200" height="667" loading="lazy" decoding="async"><a href="{{ asset('assets/img/apm-selected/stakeholder-gallery-landscape.webp') }}" class="icon-btn popup-image" aria-label="Enlarge image: Open landscapes and wildlife"><i class="fal fa-magnifying-glass-plus" aria-hidden="true"></i></a></div>
+                <figcaption class="mt-3"><h2 class="h5">Open landscapes and wildlife</h2></figcaption>
+            </figure></div>
+            <div class="col-lg-4 col-md-6"><figure class="gallery-box style5 mb-0">
+                <div class="gallery-img global-img"><img src="{{ asset('assets/img/apm-selected/stakeholder-gallery-zebras.webp') }}" alt="Zebras in grassland with a city skyline behind them" width="1200" height="801" loading="lazy" decoding="async"><a href="{{ asset('assets/img/apm-selected/stakeholder-gallery-zebras.webp') }}" class="icon-btn popup-image" aria-label="Enlarge image: Wildlife beside the city"><i class="fal fa-magnifying-glass-plus" aria-hidden="true"></i></a></div>
+                <figcaption class="mt-3"><h2 class="h5">Wildlife beside the city</h2></figcaption>
+            </figure></div>
+            <div class="col-lg-4 col-md-6"><figure class="gallery-box style5 mb-0">
+                <div class="gallery-img global-img"><img src="{{ asset('assets/img/apm-selected/stakeholder-hero-safari.webp') }}" alt="Safari vehicle, zebras and wildebeest beneath a warm sunset sky" width="1600" height="900" loading="lazy" decoding="async"><a href="{{ asset('assets/img/apm-selected/stakeholder-hero-safari.webp') }}" class="icon-btn popup-image" aria-label="Enlarge image: Safari at sunset"><i class="fal fa-magnifying-glass-plus" aria-hidden="true"></i></a></div>
+                <figcaption class="mt-3"><h2 class="h5">Safari at sunset</h2></figcaption>
+            </figure></div>
+            <div class="col-lg-4 col-md-6"><figure class="gallery-box style5 mb-0">
+                <div class="gallery-img global-img"><img src="{{ asset('assets/img/apm-selected/stakeholder-transport.webp') }}" alt="Yellow safari vehicles on a road through grassland" width="900" height="790" loading="lazy" decoding="async"><a href="{{ asset('assets/img/apm-selected/stakeholder-transport.webp') }}" class="icon-btn popup-image" aria-label="Enlarge image: Travel through open landscapes"><i class="fal fa-magnifying-glass-plus" aria-hidden="true"></i></a></div>
+                <figcaption class="mt-3"><h2 class="h5">Travel through open landscapes</h2></figcaption>
+            </figure></div>
+            <div class="col-lg-4 col-md-6"><figure class="gallery-box style5 mb-0">
+                <div class="gallery-img global-img"><img src="{{ asset('assets/img/apm-selected/stakeholder-nairobi.webp') }}" alt="Giraffes with the Nairobi skyline in the background" width="1200" height="900" loading="lazy" decoding="async"><a href="{{ asset('assets/img/apm-selected/stakeholder-nairobi.webp') }}" class="icon-btn popup-image" aria-label="Enlarge image: City and nature"><i class="fal fa-magnifying-glass-plus" aria-hidden="true"></i></a></div>
+                <figcaption class="mt-3"><h2 class="h5">City and nature</h2></figcaption>
+            </figure></div>
+            <div class="col-lg-4 col-md-6"><figure class="gallery-box style5 mb-0">
+                <div class="gallery-img global-img"><img src="{{ asset('assets/img/apm-selected/stakeholder-service-safari.webp') }}" alt="Giraffe beside an open-roof safari van" width="900" height="790" loading="lazy" decoding="async"><a href="{{ asset('assets/img/apm-selected/stakeholder-service-safari.webp') }}" class="icon-btn popup-image" aria-label="Enlarge image: Wildlife encounters"><i class="fal fa-magnifying-glass-plus" aria-hidden="true"></i></a></div>
+                <figcaption class="mt-3"><h2 class="h5">Wildlife encounters</h2></figcaption>
+            </figure></div>
         </div>
         <div class="text-center mt-5"><p>Tell us the experiences you have in mind. We will help shape a journey around your interests, dates and budget.</p><a href="{{ route('contact') }}" class="th-btn th-icon">Start planning</a> <a href="{{ route('destinations') }}" class="th-btn style4">Explore destinations</a></div>
     </div>

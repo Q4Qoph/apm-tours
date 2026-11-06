@@ -400,3 +400,12 @@
     .header-layout8 .main-menu > ul > li > a { font-size: 14px; }
     .header-layout8 .header-button .th-btn { padding: 12px 16px; font-size: 14px; }
 }
+
+/* Shared contact rows: use the available width before wrapping long addresses. */
+.apm-contact-details.th-widget-contact {
+    max-width: 100%;
+}
+
+.apm-contact-details .details {
+    flex: 1;
+}

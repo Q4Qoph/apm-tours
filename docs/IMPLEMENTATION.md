@@ -208,3 +208,17 @@ FAQ visual adjustment: removed the opening breadcrumb/banner and promoted the re
 ### Blog/Gallery content and navigation — 2026-11-04
 
 Implemented shared Blog and Gallery header links and removed their former footer links. Blog now presents three profile-based travel-guidance articles with clean individual routes and a reusable article wrapper. The legacy detail URL redirects to the planning guide. Gallery presents nine existing illustrative photographs with captions and Tourm lightbox controls. Demo posts, author/date claims and fake pagination are removed from these pages. Blade compilation, existing tests and five-page HTTP/link/image checks pass; browser and owner acceptance and deployment remain pending.
+
+### Approved stakeholder photographs and labels — 2026-11-06
+
+- [-] Implemented the approved six-photo placement plan: replace the buildings hero slide, update safari/transport service photos and Nairobi cards, and add two gallery photos. Shared contact/social rows omit redundant visible labels while preserving accessible names, handles and contact actions. See [FRONTEND.md](FRONTEND.md#approved-photo-and-label-revisions--2026-11-06) for the source-to-placement map.
+- Verified: Blade compilation; existing suite (2 tests, 2 assertions); HTTP 200 for Home, Destinations, Services, Gallery, Contact and FAQ using isolated array sessions/cache; image file/dimension checks; whitespace diff check.
+- Pending: browser review of mobile email wrapping, hero text contrast, image crops and gallery lightbox. No production release performed for these revisions.
+
+Owner follow-up: all six newly supplied photographs now appear in Gallery (15 images total), each with descriptive alt text and the existing lightbox link. Blade compilation and checks for all six image references and 15 lightbox entries passed; browser visual review remains pending.
+
+Home image selection correction: reverted the latest first-slide and Who We Are replacements at the owner’s request. Await explicit selection from the six new photos; all six remain in Gallery. Blade compilation passed after restoring the prior references.
+
+Owner selected photo 2 (yellow safari vehicles) for the second Home slider image, replacing the sunset safari photograph. Updated Home and frontend documentation; Blade compilation and diff checks passed. Browser visual review remains pending.
+
+Owner selected photo 5 (giraffe beside white safari van) for the main Home Who We Are image. Updated image reference, alt text and dimensions; Blade compilation and diff checks passed. Visual acceptance remains pending.

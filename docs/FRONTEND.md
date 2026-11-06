@@ -73,3 +73,26 @@ Blog and Gallery moved into the shared desktop/mobile navigation, with their pre
 Gallery reuses `gallery-box style5`, `popup-image`, and existing selected WebP photos with nine descriptive captions. Photography is labeled illustrative; no unverified location or client/supplier association is claimed. Existing image files are reused without modification. Scoped CSS fits gallery/card photos and tightens the seven-link desktop navigation at 1200–1399px. Static article content is a draft adaptation of Company Profile services, destinations, delivery stages and responsible-tourism principles; owner review remains pending.
 
 Blade compilation, two existing tests, and temporary render/link/image checks passed for the blog listing, three articles and gallery. Gallery has nine lightbox links; each page has one H1, shared header/footer, and working named routes. Browser lightbox, header wrapping, image crops and mobile visual review remain pending.
+
+## Approved photo and label revisions — 2026-11-06
+
+The owner approved the plan based on two recent chat screenshots, an annotated mobile screenshot and six supplied photographs. Shared contact rows omit visible Call/WhatsApp, Email, Website and Address labels while retaining screen-reader labels, icons and working links. Shared social rows show icons plus handles with platform names visually hidden; exact profile URLs remain unconfirmed. Contact cards retain their section headings. Contact rows use available width and the email has a preferred break after `@`; mobile browser verification remains pending.
+
+Six new WebP files under `public/assets/img/apm-selected/` preserve the external original downloads:
+
+| File | Source WhatsApp image suffix (2026-11-06) | Placement | Dimensions |
+| --- | --- | --- | --- |
+| `stakeholder-hero-safari.webp` | `14.33.17` | Home carousel replaces coastal-buildings slide | 1600 × 900 |
+| `stakeholder-transport.webp` | `14.33.17(1)` | Private & Group Transport service | 900 × 790 |
+| `stakeholder-nairobi.webp` | `14.33.17(2)` | Nairobi card on Home and Destinations | 1200 × 900 |
+| `stakeholder-gallery-landscape.webp` | `14.33.17(3)` | Gallery addition | 1200 × 667 |
+| `stakeholder-service-safari.webp` | `14.33.18` | Safaris & Holiday Packages service | 900 × 790 |
+| `stakeholder-gallery-zebras.webp` | `14.33.18(1)` | Gallery addition | 1200 × 801 |
+
+These approved placements supersede the earlier rule retaining all destination artwork for the Nairobi card only. Gallery now has fifteen photographs, including all six supplied images and retains the illustrative-image note. Images do not establish A&PM ownership of vehicles, supplier relationships or completed trips. Existing Tourm structures and carousel behavior remain.
+
+Owner correction: the latest first-slide and Who We Are photo changes were reverted pending explicit image selection. The first slide uses `hero-safari.webp`, the second retains `stakeholder-hero-safari.webp`, and Who We Are uses `about-safari.webp`. All six supplied images remain in Gallery.
+
+Explicit owner selection: Home’s second hero slide now uses photo 2, yellow safari vehicles with mountains behind (`stakeholder-transport-banner.webp`, an uncropped derivative of the supplied `14.33.17(1)` image). The first slide, its preload and Who We Are remain as restored above.
+
+Explicit owner selection: the main Home Who We Are image now uses photo 5, the large giraffe beside a white safari van (`stakeholder-service-safari.webp`, 900 × 790), with updated alt text and intrinsic dimensions. The two smaller images and hero slides retain their existing selections. Browser crop review remains pending.

@@ -184,3 +184,7 @@ Read `docs/CONTENT-SOURCE-AUDIT.md` before editing company, FAQ, or policy copy.
 ## 19. Blog and Gallery Content (2026-11-04)
 
 Blog and Gallery now appear in shared desktop/mobile navigation and are moved out of the footer links. Blog has three static, profile-based travel-guidance articles with individual named routes and a shared editorial component; no fake authors, dates, comments, or package prices. `/blog-details` permanently redirects to the planning article. Gallery uses nine existing selected photographs with a clear illustrative-image note and the existing popup-image plugin. Never describe those photos as completed A&PM trips or verified supplier relationships. These pages still need visual/owner review before being marked fully accepted.
+
+## 20. Approved Photo and Label Revisions (2026-11-06)
+
+Shared contact rows omit redundant visible field labels; social rows show platform icons and account handles, with platform names kept accessible to screen readers. Do not restore visible platform prefixes or invent profile URLs. Six supplied photographs now have optimized `stakeholder-*.webp` derivatives; see `docs/FRONTEND.md` for placements. The Home buildings hero slide is replaced, Home/Destinations Nairobi cards share the approved giraffe photo, Services uses new safari/transport photos, and Gallery contains fifteen illustrative images, including all six supplied photographs. Browser acceptance remains pending.

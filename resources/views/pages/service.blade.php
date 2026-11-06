@@ -5,8 +5,8 @@
     $services = [
         [
             'name' => 'Safaris & Holiday Packages',
-            'image' => 'assets/img/apm-selected/service-safari.webp',
-            'alt' => 'Travellers on safari with wildlife in open grassland',
+            'image' => 'assets/img/apm-selected/stakeholder-service-safari.webp',
+            'alt' => 'Giraffe beside an open-roof safari van',
             'description' => 'Tailor-made safaris, leisure trips, weekend escapes, family holidays and themed travel experiences.',
             'width' => 900,
             'height' => 790,
@@ -21,8 +21,8 @@
         ],
         [
             'name' => 'Private & Group Transport',
-            'image' => 'assets/img/apm-selected/service-transport.webp',
-            'alt' => 'Four-wheel-drive vehicle on a rural road',
+            'image' => 'assets/img/apm-selected/stakeholder-transport.webp',
+            'alt' => 'Yellow safari vehicles on a road through grassland',
             'description' => 'Coordinated airport transfers and tour transport through licensed vehicle operators.',
             'width' => 900,
             'height' => 790,

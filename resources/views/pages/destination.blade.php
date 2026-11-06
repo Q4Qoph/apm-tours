@@ -69,11 +69,11 @@ $destinationHighlights = [
     ],
     [
         'name' => 'Nairobi',
-        'image' => 'assets/img/destinations/nairobi.webp',
-        'alt' => 'Nairobi city and wildlife destination artwork',
+        'image' => 'assets/img/apm-selected/stakeholder-nairobi.webp',
+        'alt' => 'Giraffes with the Nairobi skyline in the background',
         'description' => 'City stays, airport transfers, Nairobi National Park and curated urban experiences.',
-        'width' => 1448,
-        'height' => 1086,
+        'width' => 1200,
+        'height' => 900,
     ],
     [
         'name' => 'East Africa',
