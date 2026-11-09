@@ -4,6 +4,8 @@ This directory contains the A&PM Tours & Travel implementation roadmap and techn
 
 ## Start here
 
+- [Production deployment](DEPLOYMENT.md) — verified Contabo SSH target, release procedure, rollback backup and live verification.
+
 - [Contact form design review](CONTACT-FORM-DESIGN-REVIEW.md) — screenshot/source findings, form-usability research and approved visual revision; implemented locally with remaining interactive acceptance noted.
 
 - [Contact form implementation plan](CONTACT-FORM-PLAN.md) — original Tourm form findings, proposed fields, Cloudflare SMTP delivery to both approved recipients, approved email-only scope and acceptance checks. Implemented locally; browser/live SMTP verification pending.
@@ -21,10 +23,6 @@ This directory contains the A&PM Tours & Travel implementation roadmap and techn
 - [Testing](TESTING.md) — current test configuration, commands, coverage, and verification expectations.
 - [Architecture decisions](decisions/) — dated ADRs for significant accepted decisions.
 - [Agent instructions](../AGENTS.md) — repository-wide coding-agent rules.
-
-## Deferred documentation
-
-`DEPLOYMENT.md` is not created yet: the repository contains no deployment configuration and the hosting target is **Not yet verified**. Add a deployment runbook when the target platform, runtime, release process, secrets handling, and backup requirements are approved. Do not create placeholder docs for technologies the project has not selected.
 
 ## Maintenance
 
