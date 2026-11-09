@@ -188,3 +188,29 @@ Blog and Gallery now appear in shared desktop/mobile navigation and are moved ou
 ## 20. Approved Photo and Label Revisions (2026-11-06)
 
 Shared contact rows omit redundant visible field labels; social rows show platform icons and account handles, with platform names kept accessible to screen readers. Do not restore visible platform prefixes or invent profile URLs. Six supplied photographs now have optimized `stakeholder-*.webp` derivatives; see `docs/FRONTEND.md` for placements. The Home buildings hero slide is replaced, Home/Destinations Nairobi cards share the approved giraffe photo, Services uses new safari/transport photos, and Gallery contains fifteen illustrative images, including all six supplied photographs. Browser acceptance remains pending.
+
+## 21. Approved Footer and Navigation Alignment (2026-11-09)
+
+The owner approved a compact footer with explicit responsive columns, smaller white-backed logo, and a separate bottom bar for copyright, Terms, Privacy and Cookies. Footer Explore reuses `partials/site-nav-items.blade.php` so desktop/mobile headers and footer share Home, About Us, Destinations, Services, Blog, Gallery and Contact. This supersedes the earlier Blog/Gallery footer exclusion. Activities/Tours are removed from footer navigation; their demo routes remain. FAQ stays in the contact column. Preserve approved wording, green surface, social handles without invented URLs, and plane motion/reduced-motion support. See `docs/FRONTEND.md`; browser acceptance remains pending.
+
+Owner correction (2026-11-09): use a location pin for the shared address row; this supersedes the earlier envelope-icon instruction. Email keeps its envelope icon.
+
+## 22. Floating WhatsApp Contact (2026-11-09)
+
+Use the approved 0788799517 number (`https://wa.me/254788799517`) for the always-visible floating WhatsApp link beside scroll-to-top in the shared after-footer partial. The footer omits its WhatsApp action through `showWhatsApp => false` on the contact-details include, retaining its telephone link; the Contact page and slide-out panel keep their existing WhatsApp actions. Preserve labeled native controls, keyboard focus and safe-area spacing. Browser acceptance remains pending; see `docs/FRONTEND.md`.
+
+## 23. Approved Email-only Contact Form (2026-11-09)
+
+Contact now uses a source-derived Tourm form through `partials/contact-enquiry-form.blade.php`; preserve its labels, privacy notice, native select, feedback and source styling without `.ajax-contact`. POST `/contact` (`contact.send`) validates via SendContactEnquiryRequest and sends ContactEnquiry synchronously over SMTP to configured staff recipients, with visitor Reply-To. The owner approved both Gmail recipients and email-only scope. No enquiry model/table, queue worker, admin or customer acknowledgement was added. Protect CSRF, honeypot and the 5-per-minute/IP limiter. Read `docs/CONTACT-FORM-PLAN.md` for private configuration, failure behaviour, coverage and outstanding browser/live SMTP verification. No production release or real email test has occurred.
+
+Live verification update (2026-11-09): runtime SMTP settings passed safe checks; a network-enabled test authenticated and Cloudflare accepted one synthetic enquiry addressed to both approved recipients. Inbox delivery, Reply-To and browser acceptance still need owner verification. No deployment performed. See `docs/CONTACT-FORM-PLAN.md`.
+
+### Visitor acknowledgement update — 2026-11-09
+
+The owner subsequently approved automatic visitor acknowledgement. After successful staff notification, send ContactAcknowledgement to the validated visitor address with fixed content, A&PM sender/Reply-To and no booking confirmation. Acknowledgement failure must not turn an accepted staff enquiry into a resubmission request. The form notice mentions the acknowledgement. Optional MAIL_SOURCE_IP enables local IPv4 binding; TLS verification stays enabled. A live local form test obtained SMTP acceptance for staff and visitor messages; inbox receipt and browser acceptance remain pending. This supersedes section 23’s earlier customer-acknowledgement exclusion; see docs/CONTACT-FORM-PLAN.md.
+
+## 24. Approved Contact Visual Revision (2026-11-09)
+
+Contact uses a warm-neutral background, compact introduction/three process steps and a top-aligned 4/8 desktop layout with a wider Tourm-derived form. Scoped brand CSS uses smaller headings, 50px controls, a resizable message field and full-width mobile submit. Preserve visible labels, privacy/acknowledgement notice, validation and mail flow. Do not restore the removed opening card row or full-height photo behind body text. See `docs/CONTACT-FORM-DESIGN-REVIEW.md` for snapshot verification and remaining live interaction/owner acceptance.
+
+Footer follow-up (2026-11-09): omit the website row in the footer through `showWebsite => false`; retain it by default in the shared contact panel. Preserve scoped footer row alignment, inline flex-positioned Explore arrows and reset contact-text offsets.

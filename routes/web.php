@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Http\Controllers\ContactEnquiryController;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'pages.home')->name('home');
@@ -17,6 +18,7 @@ Route::view('/tour', 'pages.tour')->name('tours');
 Route::view('/tour-details', 'pages.tour-details')->name('tours.details');
 Route::view('/faq', 'pages.faq')->name('faq');
 Route::view('/contact', 'pages.contact')->name('contact');
+Route::post('/contact', ContactEnquiryController::class)->middleware('throttle:contact')->name('contact.send');
 Route::view('/blog', 'pages.blog')->name('blog');
 Route::view('/blog/planning-your-trip', 'pages.blog-details')->name('blog.planning');
 Route::view('/blog/safari-and-coast', 'pages.blog.safari-coast')->name('blog.safari-coast');

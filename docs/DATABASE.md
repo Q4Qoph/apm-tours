@@ -30,3 +30,7 @@ The only application model is `app/Models/User.php`. There are no travel service
 ## Planned domain design
 
 No travel schema has been approved. Before adding it, document the enquiry/quotation lifecycle, fields, staff roles, notifications, privacy/retention requirements, relationships, and deletion behavior in the implementation roadmap. Add ER diagrams or detailed table contracts only after those decisions are made.
+
+## Email-only contact enquiry — 2026-11-09
+
+The owner approved the email-only first release. Enquiries are validated and sent synchronously to configured staff inboxes; no enquiry table, model, queue or migration was added. Validation/failure data temporarily uses the existing session mechanism for form feedback; staff inboxes retain received messages. There is no durable enquiry/retry record. Active runtime database and migration status remain unverified.

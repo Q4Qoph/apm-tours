@@ -45,3 +45,13 @@ Planned enquiry flow: browser form → Laravel web route → Form Request valida
 ## Change rules
 
 Prefer Laravel conventions and keep public presentation, request handling, persistence, and authorization in their appropriate layers. Add a separate service/action only when an approved workflow has enough complexity to justify it. Record material architecture changes in a new ADR and update the implementation roadmap.
+
+## Contact enquiry workflow — 2026-11-09
+
+The approved email-only first release adds POST `/contact` (`contact.send`) through ContactEnquiryController and SendContactEnquiryRequest. The GET page remains a Blade view. Validation, CSRF, an empty honeypot and a named 5-per-minute/IP limiter protect submission. A synchronous ContactEnquiry mailable uses SMTP explicitly, a configured A&PM From address, fixed configured staff recipients and visitor Reply-To. Success/failure uses redirects with session feedback; throttle responses render Contact with HTTP 429 and Retry-After. No travel-domain persistence, queue, admin or automatic customer email is implemented.
+
+Private recipient configuration is mandatory; missing/invalid recipients fail closed. Transport errors preserve form input and log only a generic diagnostic plus exception class. SMTP acceptance is not verified inbox delivery. See CONTACT-FORM-PLAN.md for the approved email-only tradeoffs, configuration and remaining live verification. This supersedes earlier descriptions of Contact as an external demo or contact-links-only page; other copied demo forms remain unimplemented.
+
+### Visitor acknowledgement update — 2026-11-09
+
+ContactEnquiryController now sends a separate ContactAcknowledgement to the validated visitor after the staff notification succeeds. It uses fixed HTML/plain-text content and A&PM Reply-To, without quoting visitor input. Acknowledgement transport failure preserves staff-submission success and adds a separate visitor notice. This supersedes earlier statements that no customer email is sent. No queue or persistence was added.

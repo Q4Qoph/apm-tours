@@ -24,3 +24,13 @@ Do not report a check as passed unless it was run. After the Blade integration, 
 - Recheck responsive layout, keyboard navigation, form labels/errors, metadata, image loading, and template plugin behavior when the public site is built.
 - Run Pint in check mode and `npm run build` for relevant code changes. There is no configured JS/CSS linter or frontend unit-test runner; do not invent npm scripts.
 - Record exact commands, outcomes, and known gaps in `docs/IMPLEMENTATION.md` when a phase's verification status changes.
+
+## Contact enquiry coverage — 2026-11-09
+
+Added `tests/Feature/ContactEnquiryTest.php`: 24 focused checks for rendered form, both recipients and sender/Reply-To, optional phone, validation and limits, header injection, honeypot, rate limiting, CSRF, retained/escaped input, escaped email output, invalid recipient configuration and transport failure. Mail fakes/mocks avoid network calls; tests use array sessions/cache and no business database. Cross-request tests retain the session cookie for JSON session fidelity.
+
+Passed `php artisan test --filter=ContactEnquiryTest` (24 checks, 127 assertions), full `php artisan test` (26 tests, 129 assertions), Pint for affected PHP files, Blade compilation and whitespace check. SMTP inbox delivery and browser interaction remain unverified. The earlier statement that coverage consists only of scaffold examples is superseded.
+
+### Visitor acknowledgement update — 2026-11-09
+
+Added acknowledgement recipient/sender/Reply-To and HTML/plain-text content tests, plus the independent acknowledgement-failure path with no resubmission instruction. Focused suite: 27 checks/148 assertions; full suite: 29 tests/150 assertions. A live HTTP-kernel form submission using actual SMTP confirmed staff notification and visitor acknowledgement acceptance after local IPv4 binding. Inbox receipt and browser visual interaction remain pending.

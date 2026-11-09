@@ -4,6 +4,10 @@ This directory contains the A&PM Tours & Travel implementation roadmap and techn
 
 ## Start here
 
+- [Contact form design review](CONTACT-FORM-DESIGN-REVIEW.md) — screenshot/source findings, form-usability research and approved visual revision; implemented locally with remaining interactive acceptance noted.
+
+- [Contact form implementation plan](CONTACT-FORM-PLAN.md) — original Tourm form findings, proposed fields, Cloudflare SMTP delivery to both approved recipients, approved email-only scope and acceptance checks. Implemented locally; browser/live SMTP verification pending.
+
 - [Source-document content audit](CONTENT-SOURCE-AUDIT.md) — comparison findings, FAQ corrections, approved exceptions, and remaining demo-content gaps.
 - [Stakeholder feedback action plan](STAKEHOLDER-REVIEW-PLAN.md) — proposed response to the 2026-11-04 forwarded feedback; awaiting approval before coding.
 - [Implementation roadmap](IMPLEMENTATION.md) — authoritative phases, task status, verification, blockers, and next work.

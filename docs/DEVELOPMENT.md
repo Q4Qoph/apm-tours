@@ -40,3 +40,11 @@ These commands were checked against the current scripts/tool availability during
 2. Confirm the active environment and protect `.env`/database contents.
 3. Make a focused change and update the relevant roadmap item and technical document.
 4. Run the relevant checks, record results, review the diff, and report files/risks.
+
+## Contact form SMTP setup — 2026-11-09
+
+The contact handler explicitly uses the SMTP mailer; changing MAIL_MAILER to log will not redirect enquiries to logs. Set the Cloudflare SMTP host/scheme/port/username/password, approved sender and CONTACT_RECIPIENTS in private runtime configuration as documented in CONTACT-FORM-PLAN.md. `.env.example` contains nonsecret defaults for Cloudflare and the two approved recipients, with a null password. Existing `.env` values are not automatically changed. An empty/invalid recipient list causes an honest form-delivery error rather than a success message. The SMTP timeout is 15 seconds. Confirm that MAIL_URL does not override these settings without printing any secret URL. Refresh configuration through the environment's release process. Real SMTP delivery and hosting connectivity have not been tested.
+
+### Visitor acknowledgement update — 2026-11-09
+
+Optional MAIL_SOURCE_IP is read by the SMTP mailer. The local environment and .env.example use 0.0.0.0 after an IPv4-only authentication probe resolved a PHP network-unreachable failure. Leave unset or choose the appropriate binding on other hosts; TLS hostname/certificate verification remains enabled. A live local form submission successfully submitted both staff notification and visitor acknowledgement to SMTP.

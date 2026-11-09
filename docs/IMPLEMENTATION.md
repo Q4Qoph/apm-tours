@@ -222,3 +222,64 @@ Home image selection correction: reverted the latest first-slide and Who We Are 
 Owner selected photo 2 (yellow safari vehicles) for the second Home slider image, replacing the sunset safari photograph. Updated Home and frontend documentation; Blade compilation and diff checks passed. Browser visual review remains pending.
 
 Owner selected photo 5 (giraffe beside white safari van) for the main Home Who We Are image. Updated image reference, alt text and dimensions; Blade compilation and diff checks passed. Visual acceptance remains pending.
+
+### Approved footer hierarchy and header alignment — 2026-11-09
+
+- [-] Implemented the approved compact footer: smaller white-backed logo, explicit responsive columns, intact social handles, and a separate copyright/policy bottom bar. Explore reuses the header/mobile navigation partial with Home, About Us, Destinations, Services, Blog, Gallery and Contact. Removed footer promotion of demo Activities/Tours; FAQ remains in contact details. This supersedes the earlier Blog/Gallery footer exclusion.
+- Passed Blade compilation, existing suite (2 tests, 2 assertions), whitespace checks and temporary 11-page HTTP/render checks for navigation parity and separate policies using array sessions/cache.
+- Pending: browser review of responsive layout, wrapping, keyboard focus and animation. No frontend build or deployment performed. See FRONTEND.md for implementation details.
+
+Owner correction — 2026-11-09: the shared postal-address row now uses the existing Font Awesome location-pin icon (`fa-map-marker-alt`) in the footer and contact panel, superseding the earlier envelope-icon direction. Email retains its envelope. Blade compilation and whitespace checks passed; browser review remains pending.
+
+### Floating WhatsApp contact — 2026-11-09
+
+- [-] Added the approved floating WhatsApp link beside scroll-to-top using 0788799517 in international link format. Removed the footer's WhatsApp action while retaining its call link; other contact locations retain existing actions. Converted scroll-to-top into a labeled button and added scoped safe-area/focus styles.
+- Passed Blade compilation, existing suite (2 tests, 2 assertions), 11-page render checks, JS syntax and whitespace checks. Browser placement/interaction and WhatsApp handoff remain pending; no build or deployment performed. See FRONTEND.md.
+
+Owner positioning revision — 2026-11-09: WhatsApp is now the rightmost floating control, with scroll-to-top 12px to its left. Desktop/mobile safe-area offsets are preserved. CSS offset inspection and whitespace checks passed; browser verification remains pending.
+
+### Contact form planning — 2026-11-09
+
+- [x] Located and inspected original Tourm `contact.html` and its form handler against the current Contact page. Recorded a source-derived Laravel form proposal in [CONTACT-FORM-PLAN.md](CONTACT-FORM-PLAN.md).
+- [ ] Confirm fields, privacy wording and email-only versus durable storage; implement form and verify actual delivery to both approved Gmail recipients. Cloudflare screenshots show sending enabled/DNS configured; private credentials and real SMTP delivery remain unverified. No form/backend implementation, SMTP test or deployment performed during planning.
+
+### Approved contact form implementation — 2026-11-09
+
+- [-] Implemented the approved Tourm source-derived contact form with full name, email, optional phone, enquiry type and message. Added local POST route, Form Request, honeypot, 5-per-minute/IP limiter, synchronous SMTP mailable, escaped notification, configured dual recipients and visitor Reply-To. Form feedback retains input on validation/delivery failures; no database persistence, queue or automatic customer acknowledgement.
+- Passed focused contact suite (24 checks/127 assertions), full suite (26 tests/129 assertions), Pint on affected PHP, Blade compilation and whitespace checks.
+- Pending: private SMTP and recipient environment configuration, actual delivery to both inboxes, browser acceptance and separately approved deployment. No live email, credential inspection, migration or frontend build performed. See CONTACT-FORM-PLAN.md.
+
+### Live SMTP verification — 2026-11-09
+
+At the owner's request, runtime configuration was checked without printing credentials or environment values. Host, port, implicit TLS, literal username, token presence, lack of MAIL_URL override, approved sender and exact two-recipient list all passed. Configuration was not cached. The first sandboxed connection was blocked by networking; the approved network-enabled retry authenticated and Cloudflare SMTP accepted one synthetic ContactEnquiry notification addressed to both approved staff inboxes. The notification body explicitly identifies it as a test with no travel arrangements requested.
+
+This verifies SMTP authentication/submission, not final inbox delivery or real-browser submission. Owner confirmation from both inboxes, Reply-To handling and browser acceptance remain pending. No production deployment performed; no credentials printed or committed. Earlier statements that no live SMTP test has occurred are superseded by this result.
+
+## Approved visitor acknowledgement — 2026-11-09
+
+The owner requested an automatic acknowledgement and authorized a live test to their supplied Gmail address. This supersedes the earlier exclusion of customer acknowledgement. After the staff notification is accepted by SMTP, ContactEnquiryController sends ContactAcknowledgement separately to the validated visitor email. Its HTML/plain-text message uses a fixed subject and company text, confirms the enquiry process without confirming a booking or promising a response time, and allows replies to the configured A&PM sender. It does not repeat submitted message content or disclose staff recipients. Existing CSRF, validation, honeypot and rate limiting remain. The form privacy notice mentions the acknowledgement.
+
+If staff delivery fails, no acknowledgement is attempted. If only the acknowledgement fails, the page retains staff-submission success and warns that the visitor need not resubmit. Logs contain only generic text and the exception class. No persistence or automatic retry was added.
+
+Verification: focused contact suite 27 checks/148 assertions; full suite 29 tests/150 assertions; formatting, Blade compilation and whitespace checks passed. A real local HTTP-kernel GET/POST test retained the session cookie and CSRF token and used isolated array sessions/cache with actual SMTP. Both the staff notification and visitor acknowledgement were accepted by Cloudflare, with no form errors. Final inbox delivery and visual browser review remain pending. No production deployment performed.
+
+The first real attempt failed before staff notification acceptance because the default PHP SMTP connection reported network unreachable. A credential-free OpenSSL TLS handshake passed, and an IPv4-bound PHP authentication probe passed. Added optional MAIL_SOURCE_IP configuration; the private local environment and nonsecret example use `0.0.0.0` to bind IPv4. Hostname/certificate checks remain enabled. The successful live form test used that setting. This is a local network fix; confirm appropriate source binding/connectivity on the deployment host. No token or other credential values were printed or recorded.
+
+### Contact opening section removed — 2026-11-09
+
+At the owner’s request, removed the Contact page’s opening Get In Touch introduction and four telephone/email/website/social cards shown in their screenshot. The page now starts with the existing How We Deliver content and enquiry form. Promoted its retained heading to H1 to preserve the page heading hierarchy. Shared contact details, footer, floating controls, form delivery and acknowledgement remain unchanged. Blade compilation, focused contact tests and whitespace checks passed; browser visual review remains pending.
+
+### Contact form visual research — 2026-11-09
+
+- [x] Reviewed the current screenshot/code and original Tourm contact form against public form-usability/accessibility guidance and travel enquiry examples. Findings and a proposed compact, readable layout are recorded in CONTACT-FORM-DESIGN-REVIEW.md.
+- [ ] Implement and browser-verify the revised visual direction after owner confirmation. No application code, credentials, delivery flow or live email changed in this research task.
+
+### Approved contact visual revision — 2026-11-09
+
+Implemented the approved review in CONTACT-FORM-DESIGN-REVIEW.md: warm-neutral background instead of the full-section photo, compact top-aligned introduction and three process steps, wider form in a 4/8 desktop grid, smaller typography, 50px controls, shorter hints and full-width mobile submit. Modified Contact view, enquiry partial and scoped brand CSS; backend validation, staff mail and acknowledgement are unchanged. Passed focused contact tests (27 checks/148 assertions), Blade compilation, static markup checks, 11-page navigation/render checks and whitespace review. Inspected temporary Firefox snapshots at 1440/768/375px using local assets, hidden preloader and fallback/local fonts; live typography, keyboard/zoom/feedback states and final owner acceptance remain pending. No real emails, build or deployment performed for this visual task.
+
+### Footer row alignment and website removal — 2026-11-09
+
+Corrected inherited Tourm offsets: Explore arrows now participate in flex layout rather than using a fixed top offset; links occupy their column width so About Us does not wrap unnecessarily. Footer navigation/contact/social lists use 40px minimum rows and 12px gaps. Contact details reset the inherited negative margin, align with centred icon circles and retain natural multi-line address height. At the owner's request, the footer passes `showWebsite => false` to omit its redundant website row; the shared contact panel keeps its existing website entry by default.
+
+Passed Blade compilation, 11-page HTTP/navigation checks, footer content checks and whitespace review. Inspected a 1440px Firefox footer-only rendered snapshot using local assets/fallback fonts; arrow and icon/text alignment looked consistent. Live responsive/interaction acceptance remains pending. No backend tests, build or real emails were run for this presentation change.

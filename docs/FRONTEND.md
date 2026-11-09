@@ -96,3 +96,47 @@ Owner correction: the latest first-slide and Who We Are photo changes were rever
 Explicit owner selection: Home’s second hero slide now uses photo 2, yellow safari vehicles with mountains behind (`stakeholder-transport-banner.webp`, an uncropped derivative of the supplied `14.33.17(1)` image). The first slide, its preload and Who We Are remain as restored above.
 
 Explicit owner selection: the main Home Who We Are image now uses photo 5, the large giraffe beside a white safari van (`stakeholder-service-safari.webp`, 900 × 790), with updated alt text and intrinsic dimensions. The two smaller images and hero slides retain their existing selections. Browser crop review remains pending.
+
+## Approved footer layout and navigation alignment — 2026-11-09
+
+The owner approved the footer recommendation and requested alignment with header navigation. The shared footer now uses explicit Bootstrap columns (brand 3, Explore 2, contact 4, social 3 at XL), two columns at medium widths and one column on mobile. It retains the approved green surface, white logo panel, company wording, contact information, social handles and reduced-motion-aware plane. Scoped brand CSS reduces logo size, sets compact spacing/type, and keeps social handles intact. The logo has intrinsic dimensions and lazy loading.
+
+Explore includes `partials/site-nav-items.blade.php`, the same navigation used by desktop/mobile headers: Home, About Us, Destinations, Services, Blog, Gallery, Contact. The plural Destinations/Services labels now agree everywhere. Activities/Tours are no longer promoted by the footer; their existing routes are unchanged. This owner-approved alignment supersedes the earlier rule keeping Blog/Gallery out of footer navigation. FAQ remains in the contact column. Terms, Privacy and Cookies are moved into a labeled bottom navigation beside copyright, separated from the main columns by a border; the bottom bar stacks on mobile. Policy wording and routes are unchanged.
+
+Verified: `php artisan view:cache`; `php artisan test` (2 tests, 2 assertions); `git diff --check`; temporary in-process requests for Home, About, Destinations, Services, Blog, Gallery, Contact, FAQ and all three policies (11 HTTP 200 responses, matching seven-link header/Explore navigation, separate legal navigation and retained FAQ). Request checks use array sessions/cache. Responsive appearance, keyboard interaction and animation still require browser acceptance; Playwright/Puppeteer are unavailable. No frontend build or deployment performed; pages load static Tourm/brand assets directly.
+
+Owner correction — 2026-11-09: the shared postal-address row now uses the existing Font Awesome location-pin icon (`fa-map-marker-alt`) in the footer and contact panel, superseding the earlier envelope-icon direction. Email retains its envelope. Blade compilation and whitespace checks passed; browser review remains pending.
+
+## Floating WhatsApp contact — 2026-11-09
+
+At the owner's direction, an always-visible 50px WhatsApp link now sits 12px left of scroll-to-top on all pages through `template-after-footer.blade.php`. It uses the existing icon font and approved 0788799517 number (`https://wa.me/254788799517`), without a plugin, prefilled message or automatic popup. The brand CSS provides hover/focus labeling, keyboard focus and safe-area-aware desktop/mobile offsets. Both floating controls sit below header/menu/modal overlays. Scroll-to-top is now a labeled native button; its existing progress ring and JS handler remain. CSS motion is disabled for reduced-motion users; the existing JS scroll animation is unchanged.
+
+The shared contact partial accepts `showWhatsApp` (default true); the footer passes false to omit its WhatsApp link while retaining the telephone. Contact page and slide-out contact panel retain their existing WhatsApp actions.
+
+Passed: Blade compilation, existing tests (2 tests, 2 assertions), 11-page in-process render checks (one floating WhatsApp link with correct number, footer telephone retained/WhatsApp omitted, labeled scroll button), JS syntax check and whitespace check. Browser interaction, actual WhatsApp handoff, responsive overlap and focus appearance remain unverified. No frontend build or deployment performed.
+
+Owner positioning revision — 2026-11-09: WhatsApp is now the rightmost floating control, with scroll-to-top 12px to its left. Desktop/mobile safe-area offsets are preserved. CSS offset inspection and whitespace checks passed; browser verification remains pending.
+
+## Contact enquiry form — 2026-11-09
+
+The approved Tourm source-derived form is now included by Contact through `partials/contact-enquiry-form.blade.php`, replacing its right-column email/WhatsApp-only box. It preserves `contact-form style2`, Bootstrap wrappers, local input/plane icons and submit-button treatment; source demo options/action and `.ajax-contact` are omitted. The native select avoids the theme's global enhancement and keeps keyboard access. Labels, bounded fields, optional phone, privacy notice, honeypot, linked error summary, preserved values, field errors and success feedback are included. Existing contact cards, adjacent delivery copy and alternative contact links remain. Scoped brand CSS positions icons around labels and styles errors/focus.
+
+Blade compilation and automated render/behaviour checks pass; browser sizing/focus/select/overlap checks remain pending. See CONTACT-FORM-PLAN.md for implementation and SMTP configuration.
+
+### Visitor acknowledgement update — 2026-11-09
+
+The Contact form privacy notice now mentions an email acknowledgement. If acknowledgement sending fails after staff notification acceptance, a separate status notice confirms that resubmission is unnecessary. Existing validation and staff-delivery errors are unchanged. Browser acceptance remains pending.
+
+### Contact opening section removed — 2026-11-09
+
+At the owner’s request, removed the Contact page’s opening Get In Touch introduction and four telephone/email/website/social cards shown in their screenshot. The page now starts with the existing How We Deliver content and enquiry form. Promoted its retained heading to H1 to preserve the page heading hierarchy. Shared contact details, footer, floating controls, form delivery and acknowledgement remain unchanged. Blade compilation, focused contact tests and whitespace checks passed; browser visual review remains pending.
+
+### Approved contact visual revision — 2026-11-09
+
+Implemented the approved review in CONTACT-FORM-DESIGN-REVIEW.md: warm-neutral background instead of the full-section photo, compact top-aligned introduction and three process steps, wider form in a 4/8 desktop grid, smaller typography, 50px controls, shorter hints and full-width mobile submit. Modified Contact view, enquiry partial and scoped brand CSS; backend validation, staff mail and acknowledgement are unchanged. Passed focused contact tests (27 checks/148 assertions), Blade compilation, static markup checks, 11-page navigation/render checks and whitespace review. Inspected temporary Firefox snapshots at 1440/768/375px using local assets, hidden preloader and fallback/local fonts; live typography, keyboard/zoom/feedback states and final owner acceptance remain pending. No real emails, build or deployment performed for this visual task.
+
+### Footer row alignment and website removal — 2026-11-09
+
+Corrected inherited Tourm offsets: Explore arrows now participate in flex layout rather than using a fixed top offset; links occupy their column width so About Us does not wrap unnecessarily. Footer navigation/contact/social lists use 40px minimum rows and 12px gaps. Contact details reset the inherited negative margin, align with centred icon circles and retain natural multi-line address height. At the owner's request, the footer passes `showWebsite => false` to omit its redundant website row; the shared contact panel keeps its existing website entry by default.
+
+Passed Blade compilation, 11-page HTTP/navigation checks, footer content checks and whitespace review. Inspected a 1440px Firefox footer-only rendered snapshot using local assets/fallback fonts; arrow and icon/text alignment looked consistent. Live responsive/interaction acceptance remains pending. No backend tests, build or real emails were run for this presentation change.
