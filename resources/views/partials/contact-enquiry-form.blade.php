@@ -9,7 +9,7 @@
             <ul class="mb-0">
                 @foreach ($errors->getMessages() as $field => $messages)
                     @foreach ($messages as $message)
-                        <li><a href="#{{ in_array($field, ['name', 'email', 'phone', 'enquiry_type', 'message']) ? 'enquiry-'.$field : 'contact-enquiry-heading' }}">{{ $message }}</a></li>
+                        <li><a href="#{{ in_array($field, ['name', 'email', 'phone', 'enquiry_type', 'message']) ? 'enquiry-'.$field : ($field === 'cf-turnstile-response' ? 'contact-verification' : 'contact-enquiry-heading') }}">{{ $message }}</a></li>
                     @endforeach
                 @endforeach
             </ul>
@@ -60,7 +60,7 @@
             <label for="enquiry-message">Your message *</label>
             <p class="apm-field-hint" id="enquiry-message-hint">Tell us where you’d like to go, when, and how many people are travelling.</p>
             <div class="apm-enquiry-control">
-                <textarea name="message" id="enquiry-message" rows="4" class="form-control @error('message') is-invalid @enderror" minlength="10" maxlength="5000" required aria-describedby="enquiry-message-hint enquiry-sensitive-hint @error('message') enquiry-message-error @enderror" @error('message') aria-invalid="true" @enderror>{{ is_string(old('message')) ? old('message') : '' }}</textarea>
+                <textarea name="message" id="enquiry-message" rows="4" class="form-control @error('message') is-invalid @enderror" minlength="10" maxlength="5000" required aria-describedby="enquiry-message-hint enquiry-sensitive-hint @error('message') enquiry-message-error @enderror" @error('message') aria-invalid="true" @enderror>{{ is_string(old('message', $initialMessage ?? '')) ? old('message', $initialMessage ?? '') : '' }}</textarea>
                 <img src="{{ asset('assets/img/icon/chat.svg') }}" alt="" width="20" height="20">
             </div>
             <p class="apm-field-hint apm-sensitive-hint" id="enquiry-sensitive-hint">Please leave out passport, payment and sensitive medical details.</p>
@@ -73,8 +73,22 @@
         <div class="col-12">
             <p class="apm-field-hint">We’ll use your details to respond and send an email acknowledgement. Read our <a href="{{ route('privacy') }}">Privacy Policy</a>.</p>
         </div>
+        @if (config('contact.turnstile.enabled'))
+            <div class="col-12 form-group" id="contact-verification">
+                @if (config('contact.turnstile.site_key') && config('contact.turnstile.secret_key'))
+                    <div class="cf-turnstile" data-sitekey="{{ config('contact.turnstile.site_key') }}" data-action="contact_enquiry" data-theme="light" data-size="flexible"></div>
+                    <noscript><p>Please enable JavaScript to complete verification, or contact us by phone or email.</p></noscript>
+                    @once
+                        <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+                    @endonce
+                @else
+                    <p role="status">Verification is temporarily unavailable. Please contact us by phone, email or WhatsApp below.</p>
+                @endif
+                @error('cf-turnstile-response')<p class="apm-field-error" role="alert">{{ $message }}</p>@enderror
+            </div>
+        @endif
         <div class="form-btn col-12 apm-enquiry-submit">
-            <button type="submit" class="th-btn style3">Send enquiry <img src="{{ asset('assets/img/icon/plane.svg') }}" alt="" width="24" height="24"></button>
+            <button type="submit" class="th-btn style3" @disabled(config('contact.turnstile.enabled') && (! config('contact.turnstile.site_key') || ! config('contact.turnstile.secret_key')))>Send enquiry <img src="{{ asset('assets/img/icon/plane.svg') }}" alt="" width="24" height="24"></button>
         </div>
     </div>
     <p class="apm-field-hint mt-3 mb-0">Prefer another way? <a href="mailto:reservations@apmtours.com">Email us</a>, <a href="tel:+254788799517">call us</a>, or <a href="https://wa.me/254788799517">chat on WhatsApp</a>.</p>

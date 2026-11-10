@@ -22,7 +22,8 @@ class ContactEnquiryTest extends TestCase
         parent::setUp();
 
         config([
-            'contact.recipients' => ['apmtourske@gmail.com', 'j.nyabuti.85@gmail.com'],
+            'contact.recipients' => ['reservations@apmtours.com'],
+            'contact.turnstile.enabled' => false,
             'mail.from.address' => 'reservations@apmtours.com',
             'mail.from.name' => 'A&PM Tours & Travel',
         ]);
@@ -41,7 +42,7 @@ class ContactEnquiryTest extends TestCase
             ->assertDontSee('Book a tour');
     }
 
-    public function test_valid_enquiry_is_sent_to_both_recipients_with_fixed_sender_and_visitor_reply_to(): void
+    public function test_valid_enquiry_is_sent_only_to_reservations_with_fixed_sender_and_visitor_reply_to(): void
     {
         Mail::fake();
 
@@ -53,9 +54,10 @@ class ContactEnquiryTest extends TestCase
         Mail::assertSent(ContactEnquiry::class, function (ContactEnquiry $mail): bool {
             $mail->render();
 
-            return $mail->hasTo('apmtourske@gmail.com')
-                && $mail->hasTo('j.nyabuti.85@gmail.com')
-                && count($mail->to) === 2
+            return $mail->hasTo('reservations@apmtours.com')
+                && count($mail->to) === 1
+                && ! $mail->hasTo('apmtourske@gmail.com')
+                && ! $mail->hasTo('j.nyabuti.85@gmail.com')
                 && $mail->hasFrom('reservations@apmtours.com')
                 && $mail->hasReplyTo('traveller@example.com')
                 && $mail->subject === 'Website enquiry: Safari & holiday planning'
@@ -240,7 +242,7 @@ class ContactEnquiryTest extends TestCase
         $staffMail = Mockery::mock(PendingMail::class);
         $visitorMail = Mockery::mock(PendingMail::class);
         Mail::shouldReceive('mailer')->twice()->with('smtp')->andReturn($mailer);
-        $mailer->shouldReceive('to')->once()->with(['apmtourske@gmail.com', 'j.nyabuti.85@gmail.com'])->andReturn($staffMail);
+        $mailer->shouldReceive('to')->once()->with(['reservations@apmtours.com'])->andReturn($staffMail);
         $staffMail->shouldReceive('send')->once()->with(Mockery::type(ContactEnquiry::class));
         $mailer->shouldReceive('to')->once()->with('traveller@example.com')->andReturn($visitorMail);
         $visitorMail->shouldReceive('send')->once()->with(Mockery::type(ContactAcknowledgement::class))

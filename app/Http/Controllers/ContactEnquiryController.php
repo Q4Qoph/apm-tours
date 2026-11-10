@@ -8,6 +8,7 @@ use App\Http\Requests\SendContactEnquiryRequest;
 use App\Mail\ContactAcknowledgement;
 use App\Mail\ContactEnquiry;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
@@ -25,10 +26,21 @@ class ContactEnquiryController extends Controller
             return $this->deliveryFailed($enquiry);
         }
 
+        $fingerprint = hash_hmac('sha256', json_encode([
+            strtolower($enquiry['email']), $enquiry['enquiry_type'], $enquiry['message'],
+        ]), config('app.key'));
+        $duplicateKey = 'contact:duplicate:'.$fingerprint;
+
+        if (! Cache::add($duplicateKey, true, now()->addMinutes(10))) {
+            return redirect()->to(route('contact').'#contact-enquiry')->withInput($enquiry)
+                ->withErrors(['duplicate' => 'This enquiry was submitted recently or is still being sent. Please wait before trying again.']);
+        }
+
         try {
             Mail::mailer('smtp')->to($recipients)->send(new ContactEnquiry($enquiry));
         } catch (TransportExceptionInterface $exception) {
             // SMTP errors can contain credentials, message data or recipient addresses.
+            Cache::forget($duplicateKey);
             Log::warning('Contact enquiry SMTP delivery failed.', ['exception_type' => $exception::class]);
 
             return $this->deliveryFailed($enquiry);
@@ -36,6 +48,12 @@ class ContactEnquiryController extends Controller
 
         $response = redirect()->to(route('contact').'#contact-enquiry')
             ->with('contact_success', 'Your enquiry has been sent to our team. This is not a confirmed booking.');
+
+        $acknowledgementKey = 'contact:acknowledgement:'.hash_hmac('sha256', strtolower($enquiry['email']), config('app.key'));
+
+        if (! Cache::add($acknowledgementKey, true, now()->addHour())) {
+            return $response;
+        }
 
         try {
             Mail::mailer('smtp')->to($enquiry['email'])->send(new ContactAcknowledgement);

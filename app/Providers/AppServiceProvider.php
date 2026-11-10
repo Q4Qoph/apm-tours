@@ -27,14 +27,27 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         RateLimiter::for('contact', function (Request $request) {
-            return Limit::perMinute(5)->by($request->ip())->response(function (Request $request, array $headers) {
+            $response = function (Request $request, array $headers) {
                 $request->flashOnly(['name', 'email', 'phone', 'enquiry_type', 'message']);
                 $errors = (new ViewErrorBag)->put('default', new MessageBag([
-                    'rate_limit' => 'Too many enquiries. Please wait a minute before trying again, or contact us by phone or WhatsApp.',
+                    'rate_limit' => 'Too many enquiries. Please try again later, or contact us by phone or WhatsApp.',
                 ]));
 
                 return response()->view('pages.contact', ['errors' => $errors], 429, $headers);
-            });
+            };
+
+            $limits = [
+                Limit::perMinute(5)->by('contact:minute:'.$request->ip())->response($response),
+                Limit::perHour(20)->by('contact:hour:'.$request->ip())->response($response),
+            ];
+            $email = $request->input('email');
+
+            if (is_string($email) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $key = hash_hmac('sha256', strtolower(trim($email)), config('app.key'));
+                $limits[] = Limit::perHour(3)->by('contact:email:'.$key)->response($response);
+            }
+
+            return $limits;
         });
     }
 }

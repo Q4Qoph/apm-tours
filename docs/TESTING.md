@@ -34,3 +34,7 @@ Passed `php artisan test --filter=ContactEnquiryTest` (24 checks, 127 assertions
 ### Visitor acknowledgement update — 2026-11-09
 
 Added acknowledgement recipient/sender/Reply-To and HTML/plain-text content tests, plus the independent acknowledgement-failure path with no resubmission instruction. Focused suite: 27 checks/148 assertions; full suite: 29 tests/150 assertions. A live HTTP-kernel form submission using actual SMTP confirmed staff notification and visitor acknowledgement acceptance after local IPv4 binding. Inbox receipt and browser visual interaction remain pending.
+
+### Contact abuse protection — 2026-11-10
+
+Implemented locally: fail-closed server-verified Turnstile with hostname/action/replay checks, 5/minute and 20/hour IP limits, 3/hour normalized-email limit, ten-minute duplicate suppression and one acknowledgement attempt/email/hour. Existing CSRF, validation and honeypot remain; fixed mail routing and no reflected customer content in acknowledgements reduce relay abuse. Full suite passed (48 tests/269 assertions), along with formatting, Blade compilation and whitespace checks. Current Turnstile site/secret keys are absent; local submission is intentionally unavailable until configured. No new live code, Git push, real mail test or Cloudflare rule change was performed. See CONTACT-SPAM-PROTECTION.md for setup, proxy/cache requirements, limits and incoming-routing boundaries.

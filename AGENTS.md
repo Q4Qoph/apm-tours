@@ -218,3 +218,15 @@ Footer follow-up (2026-11-09): omit the website row in the footer through `showW
 ## 25. Verified Contabo Production Deployment (2026-11-09)
 
 The owner authorized GitHub push and production deployment. The live checkout is `/var/www/apm-tours` on Contabo at `169.58.31.181`, served by Apache/PHP 8.4-FPM at `https://apmtours.com`. Application revision `afc5c35` was deployed after local tests and a root-private backup; production SMTP was configured securely. Public pages/assets and a real HTTPS form submission passed; inbox arrival and full browser/owner acceptance remain pending. Preserve the server’s pre-existing mode-only artisan change. Read `docs/DEPLOYMENT.md` before future releases; continue requiring explicit authorization for production deployments. This supersedes older statements that hosting/deployment are unknown.
+
+## 26. Sole Contact Recipient (2026-11-10)
+
+The owner replaced both direct Gmail recipients with `reservations@apmtours.com` as the sole staff-notification recipient. Keep visitor acknowledgement and Reply-To behaviour. Cloudflare currently forwards reservations to the company Gmail; this is distinct from the website recipient setting. Do not restore the former two direct Gmail recipients. See `docs/CONTACT-FORM-PLAN.md`.
+
+## 27. Contact Abuse Protection (2026-11-10)
+
+Local code now requires server-verified Cloudflare Turnstile before mail, checking hostname, action and replay. Limits include 5/minute + 20/hour per IP, 3/hour per normalized email, ten-minute duplicate suppression and one acknowledgement attempt/email/hour. Preserve CSRF/honeypot, fixed recipients/From, non-reflected acknowledgements, keyed cache hashes and fail-closed verification. Missing Turnstile keys intentionally block local submission; production rollout is pending. No Cloudflare routing rules were changed. Read `docs/CONTACT-SPAM-PROTECTION.md` before activating/deploying or changing these controls.
+
+## 28. Approved Destination Search and Screenshot Follow-up (2026-11-10)
+
+Both homepage and Destinations search now query the existing destination highlights via a validated GET flow, not a journey/availability catalogue. Regions are Kenya, Uganda, Tanzania and Zanzibar; Home duration options are 1–14 days. Travel-style/duration are planning preferences carried into Contact's message, not fabricated inventory filters. Shared highlights live in `config/destinations.php`; both display modes use identical filtered results. Home's Pre-Travel Support photo uses the plate-redacted WebP derivative. WhatsApp links retain the supplied wa.me URL. These approved changes supersede earlier demo-Trip-Finder/search-unimplemented statements; see `docs/STAKEHOLDER-FOLLOWUP-2026-11-10.md`.

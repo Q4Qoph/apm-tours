@@ -15,7 +15,7 @@
             <h2 class="box-title">{{ $destination['name'] }}</h2>
             <p class="box-text apm-destination-summary">{{ $destination['description'] }}</p>
             <div class="tour-action">
-                <a href="{{ route('contact') }}" class="th-btn style4 th-icon">Plan a Trip</a>
+                <a href="{{ route('contact', array_merge($planningPreferences ?? [], ['place' => $destination['name']])) }}" class="th-btn style4 th-icon">Plan a Trip</a>
             </div>
         </div>
     </div>

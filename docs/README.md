@@ -4,6 +4,10 @@ This directory contains the A&PM Tours & Travel implementation roadmap and techn
 
 ## Start here
 
+- [November 10 stakeholder follow-up](STAKEHOLDER-FOLLOWUP-2026-11-10.md) — approved destination search, regional/duration controls, enquiry prefill, photo redaction and WhatsApp checks.
+
+- [Contact spam protection](CONTACT-SPAM-PROTECTION.md) — Turnstile, layered limits, duplicate/acknowledgement controls and separate email-routing safeguards; local keys configured; genuine browser verification and rollout pending.
+
 - [Production deployment](DEPLOYMENT.md) — verified Contabo SSH target, release procedure, rollback backup and live verification.
 
 - [Contact form design review](CONTACT-FORM-DESIGN-REVIEW.md) — screenshot/source findings, form-usability research and approved visual revision; implemented locally with remaining interactive acceptance noted.

@@ -1,0 +1,90 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'regions' => ['Kenya', 'Uganda', 'Tanzania', 'Zanzibar'],
+    'travel_styles' => ['Adventure', 'Beach', 'Group Tour', 'Couple Tour', 'Family Tour'],
+    'highlights' => [
+        [
+            'name' => 'Maasai Mara',
+            'image' => 'assets/img/destinations/maasai-mara.webp',
+            'alt' => 'Maasai Mara safari destination artwork',
+            'description' => 'Big Five safaris, migration-season travel, photography and private game drives.',
+            'width' => 1448,
+            'height' => 1086,
+        ],
+        [
+            'name' => 'Amboseli',
+            'image' => 'assets/img/destinations/amboseli.webp',
+            'alt' => 'Amboseli wildlife and Mount Kilimanjaro destination artwork',
+            'description' => 'Elephants, open savannah landscapes and iconic Kilimanjaro views.',
+            'width' => 1448,
+            'height' => 1086,
+        ],
+        [
+            'name' => 'Naivasha',
+            'image' => 'assets/img/destinations/naivasha.webp',
+            'alt' => 'Lake Naivasha destination artwork',
+            'description' => 'Lake experiences, Hell’s Gate excursions, relaxation and short escapes from Nairobi.',
+            'width' => 1672,
+            'height' => 941,
+        ],
+        [
+            'name' => 'Lake Nakuru',
+            'image' => 'assets/img/destinations/lake-nakuru.webp',
+            'alt' => 'Lake Nakuru wildlife and Rift Valley destination artwork',
+            'description' => 'Wildlife viewing, Rift Valley scenery and easy integration into multi-destination circuits.',
+            'width' => 1670,
+            'height' => 941,
+        ],
+        [
+            'name' => 'Samburu',
+            'image' => 'assets/img/destinations/samburu.webp',
+            'alt' => 'Samburu destination artwork',
+            'description' => 'Distinctive wildlife and northern Kenya landscapes.',
+            'width' => 1670,
+            'height' => 941,
+        ],
+        [
+            'name' => 'Mt. Kenya',
+            'image' => 'assets/img/destinations/mount-kenya.webp',
+            'alt' => 'Mount Kenya destination artwork',
+            'description' => 'Discover Kenya’s highest mountain destination, where majestic landscapes and exclusive adventures await.',
+            'width' => 1671,
+            'height' => 941,
+        ],
+        [
+            'name' => 'Tsavo East & West',
+            'image' => 'assets/img/destinations/tsavo-east-west.webp',
+            'alt' => 'Tsavo East and West destination artwork',
+            'description' => 'Expansive wilderness, red elephants, volcanic landscapes and longer safari circuits.',
+            'width' => 1672,
+            'height' => 941,
+        ],
+        [
+            'name' => 'Kenya Coast',
+            'image' => 'assets/img/destinations/kenya-coast.webp',
+            'alt' => 'Kenya Coast destination artwork',
+            'description' => 'Diani, Mombasa, Malindi, Watamu and Lamu beach extensions, relaxation and culture.',
+            'width' => 1671,
+            'height' => 941,
+        ],
+        [
+            'name' => 'Nairobi',
+            'image' => 'assets/img/apm-selected/stakeholder-nairobi.webp',
+            'alt' => 'Giraffes with the Nairobi skyline in the background',
+            'description' => 'City stays, airport transfers, Nairobi National Park and curated urban experiences.',
+            'width' => 1200,
+            'height' => 900,
+        ],
+        [
+            'name' => 'East Africa',
+            'image' => 'assets/img/destinations/east-africa.webp',
+            'alt' => 'East Africa travel destination artwork',
+            'description' => 'Regional travel planning across Kenya, Uganda and Tanzania, including Zanzibar.',
+            'width' => 1448,
+            'height' => 1086,
+        ],
+    ],
+];
