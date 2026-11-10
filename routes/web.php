@@ -3,6 +3,8 @@
 declare(strict_types=1);
 
 use App\Http\Controllers\ContactEnquiryController;
+use App\Http\Controllers\ContactPageController;
+use App\Http\Controllers\DestinationController;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'pages.home')->name('home');
@@ -12,12 +14,12 @@ Route::view('/service', 'pages.service')->name('services');
 Route::view('/service-details', 'pages.service-details')->name('service.details');
 Route::view('/activities', 'pages.activities')->name('activities');
 Route::view('/activities-details', 'pages.activities-details')->name('activities.details');
-Route::view('/destination', 'pages.destination')->name('destinations');
+Route::get('/destination', DestinationController::class)->name('destinations');
 Route::view('/destination-details', 'pages.destination-details')->name('destinations.details');
 Route::view('/tour', 'pages.tour')->name('tours');
 Route::view('/tour-details', 'pages.tour-details')->name('tours.details');
 Route::view('/faq', 'pages.faq')->name('faq');
-Route::view('/contact', 'pages.contact')->name('contact');
+Route::get('/contact', ContactPageController::class)->name('contact');
 Route::post('/contact', ContactEnquiryController::class)->middleware('throttle:contact')->name('contact.send');
 Route::view('/blog', 'pages.blog')->name('blog');
 Route::view('/blog/planning-your-trip', 'pages.blog-details')->name('blog.planning');
